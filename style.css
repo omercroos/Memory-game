@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.no-clicking .game-block {
+    pointer-events: none;
+}
+.content {
+    /* display: flex;  */
+    width: 600px;
+    height: 570px;
+    position: absolute;
+    left: 47.5%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+}
+.container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 20px;
+}
+.head-game {
+    width: 600px;
+    height: 50px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid #03a9f4;
+}
+.head-game:first-child {
+    padding: 10px 0 10px 20px ;
+}
+.head-game > div {
+    padding: 10px 20px 10px 0;
+}
+.body-game {
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.body-game .game-block {
+    transform-style: preserve-3d;
+    height: calc((100% - 50px) / 4);
+    width: calc((100% - 80px) / 5);
+    transition: transform 1s;
+    cursor: pointer;
+}
+.body-game .show {
+    transform: rotateY(-180deg);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.body-game .showAlways {
+    transform: rotateY(-180deg);
+    pointer-events: none;
+}
+.body-game .game-block .face {
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100% !important;
+    position: absolute;
+}
+.body-game .game-block .front {
+    border: 5px solid rgba(3, 169, 244, 0.9);
+    background-color: black;
+}
+.body-game .game-block .front::before {
+    content: "!";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+.body-game .game-block .back {
+    transform: rotateY(180deg);
+}
+.body-game .game-block .face img {
+    width: 100%;
+    height: 100%;
+}
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 21;
+    background: #03a9f4;
+    opacity: .7;
+}
+.start {
+    position: absolute;
+    left: 47.5%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 140px;
+    border-radius: 20px;
+    z-index: 22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+    background: #ff5722;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+}
+.alert {
+    width: 320px;
+    height: 130px;
+    position: absolute;
+    top: 2%;
+    left: 47.5%;
+    transform: translateX(-50%) rotate(0deg) scale(0);
+    z-index: 23;
+    box-shadow: #000 0px 2px 8px 0px;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    font-family: cursive;
+    transition: transform .5s;
+}
+.alert .massage {
+    position: relative;
+    color: #2196f3;
+    letter-spacing: 0;
+    font-size: 14px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -30px);
+    display: flex;
+    justify-content: center;
+}
+.alert input {
+    position: relative;
+    width: 100%;
+    top: 20px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #444;
+    font-size: 10px;
+    font-family: cursive;
+    height: 25px;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+.alert button {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    width: 55px;
+    font-family: cursive;
+    height: 20px;
+    font-size: 9px;
+    border: 2px solid;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ;
+}
+.alert .ok {
+    right: 80px;
+    border-color:#2196f3;
+    background-color: #2196f3;
+}
+.alert .no {
+    background-color: #444;
+    border-color: #444;
+}
+.alert .ok:hover {
+    background-color: transparent;
+    color: #2196f3;
+}
+.alert .no:hover {
+    background-color: transparent;
+    color: #444;
+}
+.win {
+    width: 350px;
+    position: absolute;
+    height: 150px;
+    display: flex;
+    background: rgb(3 169 244 / 90%);
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+    transform: scale(0);
+}
+.win .win-massage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.win .win-massage .first {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+.win .win-massage .first .user-name,
+.win .win-massage .last .num-tries {
+    color: #ff5722;
+}
+.win .win-massage  .last {
+    font-size: 14px;
+    position: relative;
+    top: 14px;
+    font-weight: bold;
+    color: #444;
+}
+.win .container-ct {
+    position: relative;
+    top: -30px;
+}
+.win .win-button {
+    width: 140px;
+    position: absolute;
+    bottom: 20px;
+    background: transparent;
+    height: 30px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+}
+.win .win-button:hover {
+    background-color: white;
+    color: #2196f3;
+}
+.win .user-name {
+    position: relative;
+    right: -5px;
+}
+.win .rank {
+    width: fit-content;
+    position: absolute;
+    top: 80px;
+}
+.win .rank span {
+    color: red;
+}
+.win .one {
+    right: 5px;
+}
+.win .two {
+    left: 5px;
+}

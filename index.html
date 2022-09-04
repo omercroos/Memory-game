@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Game</title>
+</head>
+<body>
+    <div class="overlay"></div> 
+    <div class="start">Start Game</div>
+    <div class="content">
+        <div class="container head-game">
+            <div>Hello : </div>
+            <div>Wrong Tries : <span>0</span></div>
+        </div>
+        <div class="container body-game">
+            <div class="game-block" data-color="blue">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/blue.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="blue">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/blue.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="red">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/red.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="red">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/red.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="green">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/green.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="green">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/green.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="gray">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/gray.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="gray">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/gray.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="lightblue">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/lightblue.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="lightblue">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/lightblue.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="darkblue">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/darkblue.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="darkblue">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/darkblue.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="darkred">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/darkred.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="darkred">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/darkred.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="lightgray">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/lightgray.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="lightgray">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/lightgray.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="orange">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/orange.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="orange">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/orange.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="yellow">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/yellow.png" alt="">
+                </div>
+            </div>
+            <div class="game-block" data-color="yellow">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="../Memory Game/imgs/yellow.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert">
+        <div class="massage">What's Your Name ?</div>
+        <form action="">
+            <input type="text" name="" id="">
+            <button class="ok">Ok</button>
+            <button class="no">Cancel</button>
+        </form>
+    </div>
+    <div class="win">
+        <div class="win-massage">
+            <div class="container-ct">
+                <div class="rank one"></div>
+                <div class="first">Congratulation  <span class="user-name"></span></div> 
+                <!-- <div class="rank two"></div> -->
+                <div class="last">You Complete The Game With <span class="num-tries"></span> Wrong Tries</div>
+            </div>
+        </div>
+        <div class="win-button">retry ?</div>
+    </div>
+    <audio src="../Memory Game/audio/Flip.wav" class="pick"></audio>
+    <audio src="../Memory Game/audio/Tech.wav" class="wrong"></audio>
+    <audio src="../Memory Game/audio/Coin (mario).wav" class="right"></audio>
+    <audio src="../Memory Game/audio/Applause 1.wav" class="victory"></audio>
+    <audio src="../Memory Game/audio/Input.wav" class="write"></audio>
+    <audio src="../Memory Game/audio/Mouse Click.wav" class="click"></audio>
+    <script src="main.js"></script>
+</body>
+</html>
